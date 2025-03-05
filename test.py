@@ -96,10 +96,12 @@ def save_snapshot(target_timestamp_ms: float = None) -> None:
     cap.release()
         
 
-target_timestamp_ms = 15000
-# можно сохранить все временные метки кадров, и потом по ним "перемещаться"
-result = frame_to_timestamp()
-find_best_match(frame_to_timestamp=result, target_timestamp_ms=target_timestamp_ms)
 
-# либо можно искать "ближайшую" временную метку в процессе считывания видео
-save_snapshot(target_timestamp_ms=target_timestamp_ms)
+if __name__ == '__main__':
+    target_timestamp_ms = 15000
+    # можно сохранить все временные метки кадров, и потом по ним "перемещаться"
+    result = frame_to_timestamp()
+    find_best_match(frame_to_timestamp=result, target_timestamp_ms=target_timestamp_ms)
+
+    # либо можно искать "ближайшую" временную метку в процессе считывания видео
+    save_snapshot(target_timestamp_ms=target_timestamp_ms)
